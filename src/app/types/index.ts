@@ -1,5 +1,8 @@
 export interface Education {
   institution: string;
+  website: string;
+  logo: string;
+  faculty?: string;
   degree: string;
   years: string;
 }

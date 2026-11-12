@@ -108,7 +108,7 @@ export default function About() {
               <div className="tag-list">
                 {skills.map(({ name, Icon }) => (
                   <span
-                    className="tag inline-flex items-center gap-2"
+                    className="tag skill-tag inline-flex items-center gap-2"
                     key={name}
                   >
                     <Icon

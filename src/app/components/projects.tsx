@@ -78,7 +78,7 @@ export default function Projects() {
             badges={
               <div className="tag-list" aria-label="Technologies">
                 {project.tags.map((tag) => (
-                  <span className="tag" key={tag}>
+                  <span className="tag skill-tag" key={tag}>
                     {tag}
                   </span>
                 ))}
@@ -88,7 +88,7 @@ export default function Projects() {
               <>
                 {project.githubUrl && (
                   <a
-                    className="button button-outline"
+                    className="button button-primary"
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -100,7 +100,7 @@ export default function Projects() {
                 )}
                 {project.liveUrl && (
                   <a
-                    className="button button-primary"
+                    className="button button-outline"
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"

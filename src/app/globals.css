@@ -8,7 +8,7 @@
   --soft: #f5f6f8;
   --background: #ffffff;
   --foreground: #111318;
-  --primary: #0b1526;
+  --primary: #162e50;
   --primary-foreground: #ffffff;
   --secondary: #f5f6f8;
   --secondary-foreground: #0b1526;
@@ -170,12 +170,14 @@ main:focus {
   border-radius: 10px;
   font-size: 18px;
   color: white;
+  background: var(--primary);
   transition:
     background 180ms,
     transform 180ms;
 }
 .nav-social:hover {
-  background: #ffffff12;
+  background: var(--primary);
+  box-shadow: 0 5px 15px #162e5026;
   transform: translateY(-2px);
 }
 .nav-actions::before {
@@ -187,7 +189,7 @@ main:focus {
 }
 .menu-toggle {
   display: none;
-  background: transparent;
+  background: var(--primary);
   border: 1px solid #ffffff25;
 }
 .mobile-nav {
@@ -277,21 +279,23 @@ main:focus {
   font-size: 15px;
 }
 .button-primary {
-  background: var(--navy);
+  background: var(--primary);
   color: white;
+  border-color: var(--primary);
 }
 .button-primary:hover {
-  background: #21334e;
-  box-shadow: 0 5px 15px #0b152618;
+  background: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 5px 15px #162e5026;
   transform: translateY(-2px);
 }
 .button-outline {
   background: white;
-  color: var(--navy);
+  color: var(--primary);
   border-color: #d9dce2;
 }
 .button-outline:hover {
-  border-color: var(--navy);
+  border-color: var(--primary);
   background: #f7f8fa;
   transform: translateY(-2px);
 }
@@ -504,6 +508,24 @@ main:focus {
   background: var(--soft);
   border: 1px solid #e9ebef;
   border-radius: 5px;
+}
+.skill-tag {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+@media (hover: hover) {
+  .skill-tag:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 5px 12px rgb(11 21 38 / 10%);
+    border-color: #c5cdd9;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skill-tag:hover {
+    transform: none;
+  }
 }
 .experience-list {
   padding-left: 33px;
@@ -777,11 +799,11 @@ main:focus {
 }
 .pagination button[aria-current="page"] {
   color: white;
-  background: var(--navy);
-  border-color: var(--navy);
+  background: var(--primary);
+  border-color: var(--primary);
 }
 .pagination button:hover:not(:disabled):not([aria-current="page"]) {
-  color: var(--navy);
+  color: var(--primary);
   background: var(--soft);
 }
 .pagination button:disabled {
@@ -809,10 +831,20 @@ main:focus {
   width: 47px;
   height: 47px;
   border: 1px solid var(--line);
-  background: #f8f9fb;
+  background: #ffffff;
   color: var(--navy);
   font-size: 20px;
   border-radius: 10px;
+}
+.education-logo {
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+  object-fit: contain;
+}
+.education-item h3 a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .education-item h3 {
   font-size: 17px;
