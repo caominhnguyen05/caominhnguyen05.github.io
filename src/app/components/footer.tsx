@@ -1,15 +1,19 @@
-const Footer = () => {
+import { FiArrowUp } from "react-icons/fi";
+
+export default function Footer() {
   return (
-    <footer className="px-6 md:px-12 py-10 border-t border-white/[0.08]">
-      <p className="max-w-6xl mx-auto text-gray-500 text-base leading-relaxed">
-        &copy; {new Date().getFullYear()} Nguyen Cao Minh.
-        <span className="hidden sm:inline">
-          {" "}
-          Built with Next.js, Tailwind CSS, and Framer Motion.
+    <footer className="footer container">
+      <p>
+        © {new Date().getFullYear()} Cao Minh Nguyen
+        <span className="footer-divider" aria-hidden="true">
+          /
         </span>
+        <span className="footer-note">Built with care & code.</span>
       </p>
+      <a href="#intro">
+        Back to top
+        <FiArrowUp aria-hidden="true" />
+      </a>
     </footer>
   );
-};
-
-export default Footer;
+}

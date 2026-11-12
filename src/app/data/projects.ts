@@ -3,8 +3,9 @@ import { Project } from "../types";
 export const projects: Project[] = [
   {
     title: "CS Revision Platform",
+    category: "FULL-STACK APPLICATION",
     description:
-      "As a Computer Science tutor, I made this website for my students to easily find and navigate between different revision materials for their CS exams, including past papers, revision notes, books and syllabuses. They can create an account to track their past papers completion progress, including to-do list and completed papers list.",
+      "A revision platform for my CS students, bringing past papers, notes, and syllabuses together with personal accounts and progress tracking.",
     tags: [
       "Next.js",
       "TypeScript",
@@ -16,30 +17,33 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/caominhnguyen05/cs-revision-web",
     liveUrl: "https://cs-revision.vercel.app/",
-    imageUrl: "projects/cs-revision.png",
+    imageUrl: "/projects/cs-revision.png",
   },
   {
     title: "Multi-Domain Support Triage Agent",
+    category: "AI ENGINEERING",
     description:
-      "A terminal-based, multi-domain support triage agent built for the HackerRank Orchestrate hackathon. Uses RAG (embeddings + vector search) and OpenAI GPT-4o-mini reasoning to classify user issues and intelligently escalate tickets.",
-    tags: ["RAG", "ChromaDB", "OpenAI LLM", "Python", "IF-TDF"],
+      "A hackathon-built support agent using retrieval-augmented generation and GPT-4o-mini to classify issues, retrieve answers, and escalate tickets.",
+    tags: ["RAG", "ChromaDB", "OpenAI LLM", "Python", "TF-IDF"],
     githubUrl:
       "https://github.com/caominhnguyen05/support-agent-hackerrank-orchestrate",
-    imageUrl: "projects/support_agent.png",
+    imageUrl: "/projects/support_agent.png",
   },
   {
     title: "Personal Portfolio",
+    category: "FRONTEND DEVELOPMENT",
     description:
-      "You are looking at it right now! Designed with a minimalist, modern aesthetic and built with a focus on responsiveness and smooth user interaction using Next.js, Tailwind CSS, and Framer Motion.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"],
+      "My personal portfolio, built with Next.js and Magic UI. A responsive showcase of my work, experience, and education with thoughtful interactions.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Magic UI", "Vercel"],
     githubUrl: "https://github.com/caominhnguyen05/caominh-portfolio",
     liveUrl: "https://caominhnguyen.vercel.app",
     imageUrl: "/projects/portfolio.png",
   },
   {
     title: "Bill-Splitting Application",
+    category: "BACKEND & DESKTOP",
     description:
-      "Collaborated with five students to develop a Java-based desktop application that streamlines group expense splitting after events. The app calculates individual balances, determines who owes whom, and minimises the number of payments needed.",
+      "A collaborative Java desktop app for splitting group expenses. Calculates balances and simplifies settlements to minimise the number of payments.",
     tags: [
       "Spring Boot",
       "Java",
@@ -53,6 +57,7 @@ export const projects: Project[] = [
   },
   {
     title: "CineBrowse",
+    category: "FRONTEND DEVELOPMENT",
     description:
       "A movie browser web app using React.js and the OMDb API, enabling users to search for keywords in movie titles and get dynamically updating results.",
     tags: ["React.js", "JavaScript", "CSS", "OMDb API"],

@@ -1,87 +1,67 @@
-"use client";
-import { motion } from "framer-motion";
-import React from "react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FiArrowUpRight, FiMail } from "react-icons/fi";
+import { profile } from "../data/profile";
+import SectionHeading from "./section-heading";
 
-const Contact = () => {
+export default function Contact() {
   const links = [
     {
-      platform: "Email",
-      handle: "minhnc2005@gmail.com",
-      href: "mailto:minhnc2005@gmail.com",
+      label: "Email",
+      detail: profile.email,
+      href: `mailto:${profile.email}`,
+      Icon: FiMail,
     },
     {
-      platform: "LinkedIn",
-      handle: "caominh-nguyen",
-      href: "https://www.linkedin.com/in/caominh-nguyen/",
+      label: "GitHub",
+      detail: "caominhnguyen05",
+      href: profile.github,
+      Icon: FaGithub,
     },
     {
-      platform: "GitHub",
-      handle: "caominhnguyen05",
-      href: "https://github.com/caominhnguyen05",
+      label: "LinkedIn",
+      detail: "caominh-nguyen",
+      href: profile.linkedin,
+      Icon: FaLinkedinIn,
     },
   ];
-
   return (
-    <motion.section
+    <section
       id="contact"
-      className="py-28 md:py-36 px-6 md:px-12"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6 }}
+      className="section container"
+      aria-labelledby="contact-heading"
     >
-      <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-[0.32fr_0.68fr] gap-8 lg:gap-16 items-end mb-12 md:mb-16 border-b border-white/[0.08] pb-10">
-          <p className="text-sm md:text-base font-semibold tracking-[0.16em] uppercase">
-            Contact
+      <SectionHeading number="05" title="Contact" />
+      <div className="contact-grid">
+        <div className="contact-copy">
+          <p>
+            Interested in working together or have something in mind? I&apos;m
+            looking for software engineering opportunities and always happy to
+            connect.
           </p>
-          <h2 className="font-serif text-5xl md:text-7xl font-normal text-white leading-[0.98] tracking-tight">
-            Let&apos;s connect.
-          </h2>
+          <a className="button button-primary" href={`mailto:${profile.email}`}>
+            <FiMail aria-hidden="true" />
+            Get in touch
+            <FiArrowUpRight aria-hidden="true" />
+          </a>
         </div>
-
-        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-14 lg:gap-20 items-start">
-          <div className="flex flex-col gap-6">
-            <p className="text-xl md:text-2xl text-gray-300 font-light leading-[1.65] max-w-xl">
-              I&apos;m actively looking for graduate software engineering roles
-              in 2026. If you have an opening or just want to connect, drop me a
-              message on LinkedIn or via email.
-            </p>
+        <div className="contact-links">
+          {links.map(({ label, detail, href, Icon }) => (
             <a
-              href="https://www.linkedin.com/in/caominh-nguyen/"
-              className="text-base font-semibold px-7 py-3.5 bg-white text-black rounded-full hover:bg-gray-200 transition-colors w-fit"
+              key={label}
+              href={href}
+              target={label === "Email" ? undefined : "_blank"}
+              rel={label === "Email" ? undefined : "noopener noreferrer"}
             >
-              Say hello
+              <Icon className="contact-link-icon" aria-hidden="true" />
+              <span>
+                <span className="contact-label">{label}</span>
+                <span className="contact-detail">{detail}</span>
+              </span>
+              <FiArrowUpRight className="contact-arrow" aria-hidden="true" />
             </a>
-          </div>
-
-          <div className="divide-y divide-white/[0.06]">
-            {links.map((link) => (
-              <a
-                key={link.platform}
-                href={link.href}
-                target={link.href.startsWith("mailto") ? undefined : "_blank"}
-                rel="noreferrer"
-                className="flex items-center justify-between gap-6 py-7 group"
-              >
-                <div className="flex flex-col gap-1">
-                  <span className="text-lg md:text-xl font-semibold group-hover:text-white transition-colors duration-200">
-                    {link.platform}
-                  </span>
-                  <span className="text-base md:text-lg text-gray-400 break-all">
-                    {link.handle}
-                  </span>
-                </div>
-                <span className="text-gray-500 group-hover:text-white transition-colors duration-200 text-xl">
-                  {"->"}
-                </span>
-              </a>
-            ))}
-          </div>
+          ))}
         </div>
       </div>
-    </motion.section>
+    </section>
   );
-};
-
-export default Contact;
+}

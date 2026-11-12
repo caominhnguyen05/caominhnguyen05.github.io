@@ -15,6 +15,7 @@ export interface Experience {
 
 export interface Project {
   title: string;
+  category?: string;
   description: string;
   tags: string[];
   githubUrl?: string;

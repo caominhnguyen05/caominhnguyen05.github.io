@@ -1,19 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, DM_Serif_Display } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
-const dmSerif = DM_Serif_Display({
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  weight: "400",
-  variable: "--font-serif",
-});
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Cao Minh | Portfolio",
+  title: "Cao Minh Nguyen | Software Engineer",
   description:
-    "Portfolio of Cao Minh Nguyen, a computer science student at TU Delft.",
+    "Cao Minh Nguyen — Computer Science at TU Delft. Explore my software engineering experience, backend and full-stack projects, and education.",
 };
 
 export default function RootLayout({
@@ -23,9 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${dmSerif.variable} font-sans`}>
-        {children}
-      </body>
+      <body className={`${inter.variable} antialiased`}>{children}</body>
     </html>
   );
 }

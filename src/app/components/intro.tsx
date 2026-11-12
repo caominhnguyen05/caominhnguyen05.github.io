@@ -1,157 +1,103 @@
-"use client";
-import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FiArrowDown, FiArrowUpRight } from "react-icons/fi";
+import { profile } from "../data/profile";
 
-const codeLines = [
-  { text: "const minh = {", color: "text-gray-300" },
-  { text: '  university: "TU Delft",', color: "text-blue-400" },
-  {
-    text: '  focus: ["Backend", "Data analysis", "Fullstack"],',
-    color: "text-emerald-400",
-  },
-  { text: "  openToWork: true,", color: "text-purple-400" },
-  { text: "  graduating: 2026,", color: "text-purple-400" },
-  { text: "}", color: "text-gray-300" },
-  { text: "", color: "" },
-  { text: "minh.buildSomething();", color: "text-amber-400" },
-];
-
-const TerminalBlock: React.FC = () => {
-  const [visibleLines, setVisibleLines] = useState(0);
-  const [showCursor, setShowCursor] = useState(true);
-
-  useEffect(() => {
-    if (visibleLines < codeLines.length) {
-      const t = setTimeout(() => setVisibleLines((v) => v + 1), 120);
-      return () => clearTimeout(t);
-    }
-  }, [visibleLines]);
-
-  useEffect(() => {
-    const t = setInterval(() => setShowCursor((v) => !v), 530);
-    return () => clearInterval(t);
-  }, []);
-
+export default function Intro() {
   return (
-    <motion.div
-      className="w-full max-w-xl"
-      initial={{ opacity: 0, x: 30 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.7, delay: 0.6 }}
-    >
-      <div className="flex items-center gap-1.5 px-5 py-4 bg-white/[0.07] border border-white/[0.1] rounded-t-lg border-b-0">
-        <span className="w-3 h-3 rounded-full bg-white/20" />
-        <span className="w-3 h-3 rounded-full bg-white/14" />
-        <span className="w-3 h-3 rounded-full bg-white/10" />
-        <span className="ml-4 text-xs text-gray-500 tracking-wide">
-          minh.ts
-        </span>
-      </div>
-
-      <div className="bg-white/[0.035] border border-white/[0.1] rounded-b-lg px-6 py-6 font-mono text-sm leading-[1.95] min-h-[300px] shadow-2xl shadow-black/40">
-        {codeLines.slice(0, visibleLines).map((line, i) => (
-          <div key={i} className={line.color || "text-transparent"}>
-            {line.text || "\u00A0"}
-          </div>
-        ))}
-        {visibleLines < codeLines.length && (
-          <span
-            className={`inline-block w-[7px] h-[14px] bg-gray-400 align-middle ${showCursor ? "opacity-100" : "opacity-0"} transition-opacity`}
-          />
-        )}
-        {visibleLines >= codeLines.length && (
-          <div className="mt-4 flex items-center gap-2 text-emerald-400 text-sm">
-            <span>{">"}</span>
-            <span>Ready.</span>
-            <span
-              className={`inline-block w-[6px] h-[13px] bg-emerald-500 align-middle ml-1 ${showCursor ? "opacity-100" : "opacity-0"} transition-opacity`}
-            />
-          </div>
-        )}
-      </div>
-    </motion.div>
-  );
-};
-
-const Intro: React.FC = () => {
-  return (
-    <section
-      id="intro"
-      className="relative min-h-screen flex items-center px-6 md:px-12 overflow-hidden"
-    >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.12),transparent_35%),linear-gradient(180deg,rgba(255,255,255,0.04),transparent_45%)]" />
-
-      <div className="relative z-10 w-full max-w-7xl mx-auto py-36 lg:py-44 grid lg:grid-cols-[1.08fr_0.92fr] items-center gap-14 lg:gap-20">
-        <div className="max-w-4xl">
-          <motion.span
-            className="text-sm md:text-base font-semibold tracking-[0.16em] uppercase block mb-7"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4 }}
-          >
-            Computer Science Student
-          </motion.span>
-
-          <motion.h1
-            className="font-serif text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-normal leading-[0.95] tracking-tight text-white mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            Cao Minh Nguyen.
+    <section id="intro" className="hero" aria-labelledby="intro-heading">
+      <div className="hero-inner container">
+        <div className="hero-copy">
+          <p className="hero-greeting">Hi, I&apos;m</p>
+          <h1 id="intro-heading">
+            Cao Minh
             <br />
-          </motion.h1>
-
-          <motion.div
-            className="w-20 h-px bg-white/25 my-9"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
-            style={{ transformOrigin: "left" }}
-          />
-
-          <motion.p
-            className="text-xl md:text-2xl font-light leading-[1.55] max-w-2xl mb-12"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            CS student at TU Delft. Interested in backend systems, cloud
-            infrastructure, and AI engineering. Seeking SWE graduate roles in
-            2026.
-          </motion.p>
-
-          <motion.div
-            className="flex flex-wrap gap-3 items-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.55 }}
-          >
+            Nguyen
+          </h1>
+          <p className="hero-role">
+            Bachelor's Computer Science & Engineering Graduate
+          </p>
+          <p className="hero-description">
+            Hi, I&apos;m a Computer Science graduate from TU Delft with a focus
+            on backend development and a deep interest in exploring AI agents.
+            Currently learning more about AI engineering and building agents, I
+            aim to grow as a software engineer who effectively utilizes emerging
+            AI technologies to build reliable, scalable software that delivers
+            value to customers.
+          </p>
+          <div className="hero-socials">
             <a
-              href="#projects"
-              className="text-base font-semibold px-7 py-3.5 bg-white text-black rounded-full hover:bg-gray-200 transition-colors"
-            >
-              View Projects
-            </a>
-            <a
-              href="/CM_Nguyen_CV.pdf"
+              className="button button-primary"
+              href={profile.github}
               target="_blank"
-              rel="noreferrer"
-              className="text-base font-medium px-7 py-3.5 text-gray-200 rounded-full border border-white/20 hover:border-white/45 hover:text-white transition-all"
+              rel="noopener noreferrer"
             >
-              View CV
+              <FaGithub aria-hidden="true" />
+              GitHub
+              <FiArrowUpRight aria-hidden="true" />
             </a>
-          </motion.div>
+            <a
+              className="button button-outline"
+              href={profile.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedinIn aria-hidden="true" />
+              LinkedIn
+              <FiArrowUpRight aria-hidden="true" />
+            </a>
+          </div>
+          <a
+            className="cv-link"
+            href={profile.cv}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View my résumé <FiArrowUpRight aria-hidden="true" />
+          </a>
         </div>
-
-        <div className="hidden lg:flex justify-end">
-          <TerminalBlock />
+        <div className="hero-visual">
+          <figure className="portrait">
+            <div className="portrait-image">
+              <Image
+                src="/profile-photo.jpg"
+                alt="Cao Minh Nguyen"
+                fill
+                priority
+                sizes="(max-width: 600px) 80vw, (max-width: 900px) 55vw, 380px"
+              />
+            </div>
+            <figcaption>
+              <span className="portrait-location">
+                <svg
+                  className="portrait-flag"
+                  viewBox="0 0 30 20"
+                  aria-hidden="true"
+                >
+                  <path fill="#da251d" d="M0 0h30v20H0z" />
+                  <path
+                    fill="#ff0"
+                    d="m15 4 1.8 4.3 4.7.4-3.6 3 1.1 4.6-4-2.5-4 2.5 1.1-4.6-3.6-3 4.7-.4Z"
+                  />
+                </svg>
+                <span>From Vietnam</span>
+              </span>
+              <span className="portrait-location">
+                <svg
+                  className="portrait-flag"
+                  viewBox="0 0 30 20"
+                  aria-hidden="true"
+                >
+                  <path fill="#ae1c28" d="M0 0h30v7H0z" />
+                  <path fill="#fff" d="M0 7h30v6H0z" />
+                  <path fill="#21468b" d="M0 13h30v7H0z" />
+                </svg>
+                <span>TU Delft, Netherlands</span>
+              </span>
+            </figcaption>
+          </figure>
         </div>
       </div>
-
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
     </section>
   );
-};
-
-export default Intro;
+}
