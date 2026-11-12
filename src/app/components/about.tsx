@@ -69,16 +69,17 @@ export default function About() {
       <div className="about-grid">
         <div className="about-copy">
           <p>
-            I'm a <strong>Computer Science and Engineering graduate</strong>{" "}
-            from <strong>TU Delft</strong>, where I graduated{" "}
-            <strong>cum laude</strong> with a specialization in Data. I'm
+            I&apos;m a{" "}
+            <strong>Computer Science and Engineering graduate</strong> from{" "}
+            <strong>TU Delft</strong>, where I graduated{" "}
+            <strong>cum laude</strong> with a specialization in Data. I&apos;m
             passionate about building reliable, scalable software that solves
             real-world problems.
           </p>
 
           <p>
             Through internships at{" "}
-            <strong>FPT Software, RET, and Dizconto</strong>, I've gained
+            <strong>FPT Software, RET, and Dizconto</strong>, I&apos;ve gained
             hands-on experience in <strong>backend development</strong>, REST
             APIs, and full-stack applications across healthcare, transportation,
             and event ticketing, using technologies such as Java, Spring Boot,
@@ -86,11 +87,12 @@ export default function About() {
           </p>
 
           <p>
-            I'm particularly interested in{" "}
-            <strong>AI-assisted software engineering</strong>. For my bachelor's
-            thesis, I explored <strong>LLM-based test generation</strong> for
-            Java libraries, investigating how AI can improve software testing
-            and development workflows.
+            I&apos;m particularly interested in{" "}
+            <strong>AI-assisted software engineering</strong>. For my
+            bachelor&apos;s thesis, I explored{" "}
+            <strong>LLM-based test generation</strong> for Java libraries,
+            investigating how AI can improve software testing and development
+            workflows.
           </p>
 
           <p>

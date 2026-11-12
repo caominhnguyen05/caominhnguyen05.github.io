@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import { FiArrowDown, FiArrowUpRight } from "react-icons/fi";
+import { FiArrowUpRight } from "react-icons/fi";
 import { profile } from "../data/profile";
 
 export default function Intro() {
@@ -15,7 +15,7 @@ export default function Intro() {
             Nguyen
           </h1>
           <p className="hero-role">
-            Bachelor's Computer Science & Engineering Graduate
+            Bachelor&apos;s Computer Science & Engineering Graduate
           </p>
           <p className="hero-description">
             Hi, I&apos;m a Computer Science graduate from TU Delft with a focus
