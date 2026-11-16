@@ -31,7 +31,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "node node_modules/next/dist/bin/next start -p 3100",
+    command: "node tests/serve-export.mjs",
     url: "http://127.0.0.1:3100",
     reuseExistingServer: !process.env.CI,
   },
