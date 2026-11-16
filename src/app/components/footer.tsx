@@ -4,11 +4,7 @@ export default function Footer() {
   return (
     <footer className="footer container">
       <p>
-        © {new Date().getFullYear()} Cao Minh Nguyen
-        <span className="footer-divider" aria-hidden="true">
-          /
-        </span>
-        <span className="footer-note">Built with care & code.</span>
+        © {new Date().getFullYear()} Cao Minh Nguyen       
       </p>
       <a href="#intro">
         Back to top
