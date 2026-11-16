@@ -65,7 +65,7 @@ export default function About() {
       className="section container"
       aria-labelledby="about-heading"
     >
-      <SectionHeading number="01" title="About" />
+      <SectionHeading title="About" />
       <div className="about-grid">
         <div className="about-copy">
           <p>

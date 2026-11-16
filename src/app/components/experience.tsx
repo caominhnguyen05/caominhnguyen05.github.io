@@ -9,7 +9,7 @@ export default function Experience() {
       className="section container"
       aria-labelledby="experience-heading"
     >
-      <SectionHeading number="02" title="Experience" />
+      <SectionHeading title="Experience" />
       <div className="experience-list">
         {experiences.map((experience, index) => (
           <details

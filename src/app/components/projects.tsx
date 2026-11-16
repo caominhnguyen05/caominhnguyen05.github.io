@@ -42,7 +42,6 @@ export default function Projects() {
     >
       <div ref={heading} tabIndex={-1} className="projects-heading-anchor">
         <SectionHeading
-          number="03"
           title="Projects"
           note={`${projects.length.toString().padStart(2, "0")} PROJECTS`}
         />

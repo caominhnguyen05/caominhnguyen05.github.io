@@ -12,9 +12,12 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
   const nav = useRef<HTMLElement>(null);
+  const progress = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const updateActive = () => {
+    let frame = 0;
+    const updateNavigation = () => {
+      frame = 0;
       const current = [...sections].reverse().find((name) => {
         const section = document.getElementById(name.toLowerCase());
         return section && section.getBoundingClientRect().top <= 180;
@@ -23,6 +26,30 @@ export default function Navbar() {
         window.innerHeight + window.scrollY >=
         document.documentElement.scrollHeight - 8;
       setActive(atBottom ? "contact" : (current?.toLowerCase() ?? ""));
+      const scrollableHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const fraction =
+        scrollableHeight > 0
+          ? Math.min(1, Math.max(0, window.scrollY / scrollableHeight))
+          : 0;
+      if (progress.current)
+        progress.current.style.transform = `scaleX(${fraction})`;
+    };
+    const scheduleUpdate = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateNavigation);
+    };
+    const onResize = () => {
+      if (window.innerWidth > 900) {
+        const focused = document.activeElement;
+        if (
+          focused === menuButton.current ||
+          nav.current?.querySelector("#mobile-navigation")?.contains(focused)
+        ) {
+          nav.current?.querySelector<HTMLAnchorElement>(".wordmark")?.focus();
+        }
+        setOpen(false);
+      }
+      scheduleUpdate();
     };
     const onKeyDown = (event: KeyboardEvent) => {
       if (
@@ -36,12 +63,18 @@ export default function Navbar() {
     const onPointerDown = (event: PointerEvent) => {
       if (!nav.current?.contains(event.target as Node)) setOpen(false);
     };
-    updateActive();
-    window.addEventListener("scroll", updateActive, { passive: true });
+    updateNavigation();
+    const resizeObserver = new ResizeObserver(scheduleUpdate);
+    resizeObserver.observe(document.body);
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", onResize);
     window.addEventListener("keydown", onKeyDown);
     window.addEventListener("pointerdown", onPointerDown);
     return () => {
-      window.removeEventListener("scroll", updateActive);
+      window.cancelAnimationFrame(frame);
+      resizeObserver.disconnect();
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", onResize);
       window.removeEventListener("keydown", onKeyDown);
       window.removeEventListener("pointerdown", onPointerDown);
     };
@@ -56,6 +89,9 @@ export default function Navbar() {
           aria-label="Cao Minh, back to top"
           onClick={() => setOpen(false)}
         >
+          <span className="wordmark-monogram" aria-hidden="true">
+            CM
+          </span>
           <span>Cao Minh Nguyen</span>
         </a>
         <div className="desktop-nav">
@@ -120,6 +156,12 @@ export default function Navbar() {
             </a>
           ))}
         </div>
+        <span
+          className="nav-progress"
+          ref={progress}
+          aria-hidden="true"
+          style={{ transform: "scaleX(0)" }}
+        />
       </nav>
     </header>
   );

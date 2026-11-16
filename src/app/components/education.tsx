@@ -9,7 +9,7 @@ export default function Education() {
       className="section container"
       aria-labelledby="education-heading"
     >
-      <SectionHeading number="04" title="Education" />
+      <SectionHeading title="Education" />
       <div className="education-list">
         {education.map((item) => (
           <article className="education-item" key={item.institution}>

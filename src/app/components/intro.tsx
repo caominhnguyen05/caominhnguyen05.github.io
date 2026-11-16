@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 import { profile } from "../data/profile";
 
@@ -8,11 +7,12 @@ export default function Intro() {
     <section id="intro" className="hero" aria-labelledby="intro-heading">
       <div className="hero-inner container">
         <div className="hero-copy">
-          <p className="hero-greeting">Hi, I&apos;m</p>
+          <p className="hero-greeting">
+            Hi, I&apos;m
+          </p>
           <h1 id="intro-heading">
             Cao Minh
-            <br />
-            Nguyen
+            <span>Nguyen</span>
           </h1>
           <p className="hero-role">
             Bachelor&apos;s Computer Science & Engineering Graduate
@@ -28,43 +28,31 @@ export default function Intro() {
           <div className="hero-socials">
             <a
               className="button button-primary"
-              href={profile.github}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#projects"
             >
-              <FaGithub aria-hidden="true" />
-              GitHub
+              View my Work
               <FiArrowUpRight aria-hidden="true" />
             </a>
             <a
-              className="button button-outline"
-              href={profile.linkedin}
+              className="cv-link"
+              href={profile.cv}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedinIn aria-hidden="true" />
-              LinkedIn
+              View my résumé
               <FiArrowUpRight aria-hidden="true" />
             </a>
           </div>
-          <a
-            className="cv-link"
-            href={profile.cv}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View my résumé <FiArrowUpRight aria-hidden="true" />
-          </a>
         </div>
         <div className="hero-visual">
           <figure className="portrait">
             <div className="portrait-image">
               <Image
-                src="/profile-photo.jpg"
+                src="/profile-cutout.webp"
                 alt="Cao Minh Nguyen"
                 fill
                 priority
-                sizes="(max-width: 600px) 80vw, (max-width: 900px) 55vw, 380px"
+                sizes="(max-width: 600px) 100vw, (max-width: 900px) 45vw, 560px"
               />
             </div>
             <figcaption>
