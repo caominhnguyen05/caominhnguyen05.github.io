@@ -419,8 +419,9 @@ main:focus {
   margin-bottom: 42px;
 }
 .section-heading h2 {
+  color: var(--primary);
   font-size: 38px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -1.6px;
   margin: 0;
   line-height: 1.2;
