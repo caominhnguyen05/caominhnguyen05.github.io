@@ -79,9 +79,6 @@
 .hero-socials .cv-link {
   margin-top: 0;
 }
-.hero-socials .button-primary {
-  box-shadow: 0 8px 18px #162e5020;
-}
 .cv-link {
   display: inline-flex;
   align-items: center;
@@ -124,11 +121,23 @@
   margin-inline: auto;
   overflow: hidden;
   border-radius: 10px;
-  mask-image: linear-gradient(to bottom, #000 72%, #000b 85%, transparent 100%);
+
+  mask-image: linear-gradient(
+    to bottom,
+    #000 72%,
+    #000b 85%,
+    transparent 100%
+  );
 }
 .portrait-image img {
   object-fit: cover;
   object-position: center bottom;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .portrait-image:hover {
+    filter: brightness(0.85);
+  }
 }
 .portrait figcaption {
   position: relative;

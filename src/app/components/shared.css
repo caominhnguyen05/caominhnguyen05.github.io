@@ -10,7 +10,7 @@
   font-size: 13px;
   font-weight: 500;
   line-height: 1.2;
-  transition: background 180ms, border-color 180ms, box-shadow 180ms, transform 180ms;
+  transition: background-color 180ms ease, border-color 180ms ease;
 }
 .button svg {
   font-size: 16px;
@@ -25,17 +25,19 @@
   border-color: var(--primary);
 }
 .button-primary:hover {
-  box-shadow: 0 8px 20px #162e5026;
+  background: color-mix(in srgb, var(--primary) 88%, white);
+  border-color: color-mix(in srgb, var(--primary) 88%, white);
+  box-shadow: none;
 }
 .button-outline {
-  background: white;
+  background: var(--soft);
   color: var(--primary);
   border-color: #d9dce2;
 }
 .button-outline:hover {
   border-color: var(--primary);
-  background: var(--soft);
-  transform: translateY(-2px);
+  background: white;
+  box-shadow: none;
 }
 .tag-list {
   display: flex;
