@@ -148,7 +148,7 @@ main:focus {
   }
 }
 
-/* @media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
@@ -158,4 +158,4 @@ main:focus {
     animation: none !important;
     transition: none !important;
   }
-} */
+}
