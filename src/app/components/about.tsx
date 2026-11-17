@@ -65,9 +65,12 @@ export default function About() {
       className="section container"
       aria-labelledby="about-heading"
     >
-      <SectionHeading title="About" />
+      <SectionHeading id="about-heading" title="a little about me." />
       <div className="about-grid">
         <div className="about-copy">
+          <div className="about-card-mark" aria-hidden="true">
+            <span>CM</span>
+          </div>
           <p>
             I&apos;m a{" "}
             <strong>Computer Science and Engineering graduate</strong> from{" "}

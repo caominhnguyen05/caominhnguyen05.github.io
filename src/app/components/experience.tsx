@@ -1,53 +1,37 @@
-import { FiPlus } from "react-icons/fi";
 import { experiences } from "../data/experiences";
 import SectionHeading from "./section-heading";
 
 export default function Experience() {
   return (
-    <section
-      id="experience"
-      className="section container"
-      aria-labelledby="experience-heading"
-    >
-      <SectionHeading title="Experience" />
+    <section id="experience" className="section container" aria-labelledby="experience-heading">
+      <SectionHeading id="experience-heading" title="where i've been." />
       <div className="experience-list">
-        {experiences.map((experience, index) => (
-          <details
-            className="experience-item"
-            key={`${experience.company}-${experience.role}`}
-            open={index === 0}
-          >
-            <summary>
-              <span className="experience-date mono">{experience.period}</span>
-              <span className="experience-position">
-                <span className="experience-company">
+        {experiences.map((experience) => (
+          <article className="experience-item" key={`${experience.company}-${experience.role}`}>
+            <span className="experience-date">{experience.period}</span>
+            <div className="experience-content">
+              <div className="experience-company">
+                <a href={experience.companyUrl} target="_blank" rel="noopener noreferrer">
                   {experience.company}
-                  <span className="experience-type">{experience.type}</span>
-                </span>
-                <span className="experience-role">{experience.role}</span>
-              </span>
-              <span className="expand-icon">
-                <FiPlus aria-hidden="true" />
-                <span className="sr-only">
-                  Toggle {experience.company} details
-                </span>
-              </span>
-            </summary>
-            <div className="experience-details">
-              <ul>
-                {experience.description.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-              <div className="tag-list">
-                {experience.tags.map((tag) => (
-                  <span key={tag} className="tag">
-                    {tag}
-                  </span>
-                ))}
+                </a>
+                <span className="experience-type">{experience.type}</span>
+              </div>
+              <p className="experience-role">{experience.role}</p>
+              <div className="experience-details">
+                <ul>
+                  {experience.description.map((point) => <li key={point}>{point}</li>)}
+                </ul>
+                <div className="experience-technologies mono" aria-label="Technologies">
+                  {experience.tags.map((tag, index) => (
+                    <span key={tag}>
+                      {index > 0 && <span className="experience-separator" aria-hidden="true"> / </span>}
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          </details>
+          </article>
         ))}
       </div>
     </section>

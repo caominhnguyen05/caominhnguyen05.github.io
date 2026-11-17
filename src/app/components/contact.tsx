@@ -30,7 +30,7 @@ export default function Contact() {
       className="section container"
       aria-labelledby="contact-heading"
     >
-      <SectionHeading title="Contact" />
+      <SectionHeading id="contact-heading" title="let's talk." />
       <div className="contact-grid">
         <div className="contact-copy">
           <p>

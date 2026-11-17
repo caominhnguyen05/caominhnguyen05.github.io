@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const headingFont = Instrument_Serif({
+  subsets: ["latin"], weight: "400", style: "italic",
+  variable: "--font-heading", display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Cao Minh Nguyen | Software Engineer",
@@ -17,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+      <body className={`${inter.variable} ${headingFont.variable} antialiased`}>{children}</body>
     </html>
   );
 }

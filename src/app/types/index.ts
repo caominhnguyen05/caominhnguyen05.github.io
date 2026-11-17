@@ -10,6 +10,7 @@ export interface Education {
 export interface Experience {
   role: string;
   company: string;
+  companyUrl: string;
   period: string;
   type: string;
   tags: string[];

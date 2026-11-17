@@ -4,6 +4,7 @@ export const experiences: Experience[] = [
   {
     role: "Teaching Assistant",
     company: "TU Delft",
+    companyUrl: "https://www.tudelft.nl/en/",
     period: "Sep 2025 – Nov 2025",
     type: "Academic",
     tags: ["Apache Spark", "Apache Flink", "Functional Programming"],
@@ -16,6 +17,7 @@ export const experiences: Experience[] = [
   {
     role: "Software Engineer Intern",
     company: "FPT Software",
+    companyUrl: "https://fptsoftware.com/en",
     period: "Jul 2025 – Sep 2025",
     type: "Internship",
     tags: ["Flutter", "AWS", "Amazon Transcribe", "Cognito"],
@@ -28,6 +30,7 @@ export const experiences: Experience[] = [
   {
     role: "Software Engineer Intern",
     company: "Dizconto",
+    companyUrl: "https://www.dizconto.com/",
     period: "May 2025 – Sep 2025",
     type: "Internship",
     tags: ["NestJS", "TypeScript", "REST APIs"],
@@ -39,6 +42,7 @@ export const experiences: Experience[] = [
   {
     role: "Software Engineer Intern",
     company: "RET",
+    companyUrl: "https://www.ret.nl/en/",
     period: "Apr 2025 – Jun 2025",
     type: "Internship",
     tags: ["React", "Java Spring Boot", "PostgreSQL"],

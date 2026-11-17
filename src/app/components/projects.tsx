@@ -42,8 +42,8 @@ export default function Projects() {
     >
       <div ref={heading} tabIndex={-1} className="projects-heading-anchor">
         <SectionHeading
-          title="Projects"
-          note={`${projects.length.toString().padStart(2, "0")} PROJECTS`}
+          id="projects-heading"
+          title="what i've built."
         />
       </div>
       <BentoGrid className="projects-bento" id="project-grid">
