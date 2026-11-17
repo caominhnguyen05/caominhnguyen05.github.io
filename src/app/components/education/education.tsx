@@ -12,8 +12,8 @@ export default function Education() {
     >
       <SectionHeading id="education-heading" title="where i've learned." />
       <div className="education-list">
-        {education.map((item) => (
-          <article className="education-item" key={item.institution}>
+        {education.map((item, index) => (
+          <article className="education-item" key={item.institution} data-reveal={index % 2 === 0 ? "left" : "right"} data-reveal-delay={index % 4}>
             <span className="education-icon">
               <Image
                 src={item.logo}

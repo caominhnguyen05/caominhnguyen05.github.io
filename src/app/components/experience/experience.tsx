@@ -9,7 +9,7 @@ export default function Experience() {
       <SectionHeading id="experience-heading" title="where i've been." />
       <div className="experience-list">
         {experiences.map((experience, index) => (
-          <article className="experience-item" key={`${experience.company}-${experience.role}`} aria-labelledby={`experience-role-${index}`}>
+          <article className="experience-item" key={`${experience.company}-${experience.role}`} aria-labelledby={`experience-role-${index}`} data-reveal={index % 2 === 0 ? "left" : "right"} data-reveal-delay={index % 4}>
             <div className="experience-meta">
               <span className="experience-date">{experience.period}</span>
               <span className="experience-type">{experience.type}</span>

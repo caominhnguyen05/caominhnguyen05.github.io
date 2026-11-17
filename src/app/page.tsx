@@ -7,6 +7,7 @@ import Projects from "./components/projects/projects";
 import Contact from "./components/contact/contact";
 import Footer from "./components/footer/footer";
 import Education from "./components/education/education";
+import RevealObserver from "./components/reveal-observer/reveal-observer";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         Skip to content
       </a>
       <Navbar />
+      <RevealObserver />
       <main id="main-content" tabIndex={-1}>
         <Intro />
         <About />

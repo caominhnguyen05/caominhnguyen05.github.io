@@ -33,7 +33,7 @@ export default function Contact() {
     >
       <SectionHeading id="contact-heading" title="let's talk." />
       <div className="contact-grid">
-        <div className="contact-copy">
+        <div className="contact-copy" data-reveal="left">
           <p>
             Interested in working together or have something in mind? I&apos;m
             looking for software engineering opportunities and always happy to
@@ -45,11 +45,13 @@ export default function Contact() {
             <FiArrowUpRight aria-hidden="true" />
           </a>
         </div>
-        <div className="contact-links">
-          {links.map(({ label, detail, href, Icon }) => (
+        <div className="contact-links" data-reveal="right">
+          {links.map(({ label, detail, href, Icon }, index) => (
             <a
               key={label}
               href={href}
+              data-reveal="right"
+              data-reveal-delay={index}
               target={label === "Email" ? undefined : "_blank"}
               rel={label === "Email" ? undefined : "noopener noreferrer"}
             >

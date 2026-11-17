@@ -7,18 +7,18 @@ export default function Intro() {
   return (
     <section id="intro" className="hero" aria-labelledby="intro-heading">
       <div className="hero-inner container">
-        <div className="hero-copy">
-          <p className="hero-greeting">
+        <div className="hero-copy" data-reveal="left">
+          <p className="hero-greeting" data-reveal="top">
             Hi, I&apos;m
           </p>
-          <h1 id="intro-heading">
+          <h1 id="intro-heading" data-reveal="top">
             Cao Minh
             <span>Nguyen</span>
           </h1>
-          <p className="hero-role">
+          <p className="hero-role" data-reveal="left">
             Bachelor&apos;s Computer Science & Engineering Graduate
           </p>
-          <p className="hero-description">
+          <p className="hero-description" data-reveal="left">
             Hi, I&apos;m a Computer Science graduate from TU Delft with a focus
             on backend development and a deep interest in exploring AI agents.
             Currently learning more about AI engineering and building agents, I
@@ -26,7 +26,7 @@ export default function Intro() {
             AI technologies to build reliable, scalable software that delivers
             value to customers.
           </p>
-          <div className="hero-socials">
+          <div className="hero-socials" data-reveal="left">
             <a
               className="button button-primary"
               href="#projects"
@@ -45,7 +45,7 @@ export default function Intro() {
             </a>
           </div>
         </div>
-        <div className="hero-visual">
+        <div className="hero-visual" data-reveal="right">
           <figure className="portrait">
             <div className="portrait-image">
               <Image

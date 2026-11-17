@@ -68,8 +68,8 @@ export default function About() {
     >
       <SectionHeading id="about-heading" title="a little about me." />
       <div className="about-grid">
-        <div className="about-copy">
-          <p>
+        <div className="about-copy" data-reveal="left">
+          <p data-reveal="top">
             I&apos;m a{" "}
             <strong>Computer Science and Engineering graduate</strong> from{" "}
             <strong>TU Delft</strong>, where I graduated{" "}
@@ -78,7 +78,7 @@ export default function About() {
             real-world problems.
           </p>
 
-          <p>
+          <p data-reveal="top">
             Through internships at{" "}
             <strong>FPT Software, RET, and Dizconto</strong>, I&apos;ve gained
             hands-on experience in <strong>backend development</strong>, REST
@@ -87,7 +87,7 @@ export default function About() {
             PostgreSQL, and AWS.
           </p>
 
-          <p>
+          <p data-reveal="top">
             I&apos;m particularly interested in{" "}
             <strong>AI-assisted software engineering</strong>. For my
             bachelor&apos;s thesis, I explored{" "}
@@ -96,15 +96,15 @@ export default function About() {
             workflows.
           </p>
 
-          <p>
+          <p data-reveal="top">
             In my free time, I enjoy watching football, working out at the gym,
             and travelling to explore new places and cultures.
           </p>
         </div>
-        <div className="skills">
+        <div className="skills" data-reveal="right">
           <h3 className="eyebrow">Technical skills</h3>
           {skillGroups.map(({ label, skills }) => (
-            <div className="skill-group" key={label}>
+            <div className="skill-group" key={label} data-reveal="right">
               <h4>{label}</h4>
               <div className="tag-list">
                 {skills.map(({ name, Icon }) => (

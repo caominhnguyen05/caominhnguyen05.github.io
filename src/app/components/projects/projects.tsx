@@ -53,6 +53,8 @@ export default function Projects() {
           <BentoCard
             key={project.title}
             className="project-card"
+            data-reveal={visibleProjects.indexOf(project) % 2 === 0 ? "left" : "right"}
+            data-reveal-delay={visibleProjects.indexOf(project) % 4}
             name={project.title}
             description={project.description}
             eyebrow={project.category ?? "SOFTWARE PROJECT"}
@@ -117,7 +119,7 @@ export default function Projects() {
         ))}
       </BentoGrid>
       {pageCount > 0 && (
-        <div className="pagination">
+        <div className="pagination" data-reveal="top">
           <p
             className="pagination-status mono"
             role="status"
