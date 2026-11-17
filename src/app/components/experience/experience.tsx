@@ -1,36 +1,36 @@
 import "./experience.css";
 import { experiences } from "../../data/experiences";
 import SectionHeading from "../section-heading/section-heading";
+import { FiArrowUpRight } from "react-icons/fi";
 
 export default function Experience() {
   return (
-    <section id="experience" className="section container" aria-labelledby="experience-heading">
+    <section id="experience" className="section container experience-section" aria-labelledby="experience-heading">
       <SectionHeading id="experience-heading" title="where i've been." />
       <div className="experience-list">
-        {experiences.map((experience) => (
-          <article className="experience-item" key={`${experience.company}-${experience.role}`}>
-            <span className="experience-date">{experience.period}</span>
+        {experiences.map((experience, index) => (
+          <article className="experience-item" key={`${experience.company}-${experience.role}`} aria-labelledby={`experience-role-${index}`}>
+            <div className="experience-meta">
+              <span className="experience-date">{experience.period}</span>
+              <span className="experience-type">{experience.type}</span>
+            </div>
             <div className="experience-content">
-              <div className="experience-company">
-                <a href={experience.companyUrl} target="_blank" rel="noopener noreferrer">
+              <header className="experience-header">
+                <h3 className="experience-role" id={`experience-role-${index}`}>{experience.role}</h3>
+                <a className="experience-company" href={experience.companyUrl} target="_blank" rel="noopener noreferrer">
                   {experience.company}
+                  <FiArrowUpRight aria-hidden="true" />
+                  <span className="experience-sr-only"> (opens in a new tab)</span>
                 </a>
-                <span className="experience-type">{experience.type}</span>
-              </div>
-              <p className="experience-role">{experience.role}</p>
+              </header>
               <div className="experience-details">
                 <ul>
                   {experience.description.map((point) => <li key={point}>{point}</li>)}
                 </ul>
-                <div className="experience-technologies mono" aria-label="Technologies">
-                  {experience.tags.map((tag, index) => (
-                    <span key={tag}>
-                      {index > 0 && <span className="experience-separator" aria-hidden="true"> / </span>}
-                      {tag}
-                    </span>
-                  ))}
-                </div>
               </div>
+              <ul className="experience-technologies" aria-label="Technologies">
+                {experience.tags.map((tag) => <li key={tag}>{tag}</li>)}
+              </ul>
             </div>
           </article>
         ))}
