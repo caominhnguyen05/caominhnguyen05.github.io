@@ -1,6 +1,7 @@
+import "./intro.css";
 import Image from "next/image";
 import { FiArrowUpRight } from "react-icons/fi";
-import { profile } from "../data/profile";
+import { profile } from "../../data/profile";
 
 export default function Intro() {
   return (

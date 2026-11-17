@@ -1,6 +1,7 @@
+import "./education.css";
 import Image from "next/image";
-import { education } from "../data/education";
-import SectionHeading from "./section-heading";
+import { education } from "../../data/education";
+import SectionHeading from "../section-heading/section-heading";
 
 export default function Education() {
   return (

@@ -1,7 +1,8 @@
+import "./contact.css";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { FiArrowUpRight, FiMail } from "react-icons/fi";
-import { profile } from "../data/profile";
-import SectionHeading from "./section-heading";
+import { profile } from "../../data/profile";
+import SectionHeading from "../section-heading/section-heading";
 
 export default function Contact() {
   const links = [

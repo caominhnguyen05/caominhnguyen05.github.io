@@ -1,5 +1,7 @@
 "use client";
 
+import "./projects.css";
+
 import Image from "next/image";
 import { useRef, useState } from "react";
 import { FaGithub } from "react-icons/fa";
@@ -10,8 +12,8 @@ import {
   FiExternalLink,
 } from "react-icons/fi";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
-import { projects } from "../data/projects";
-import SectionHeading from "./section-heading";
+import { projects } from "../../data/projects";
+import SectionHeading from "../section-heading/section-heading";
 
 const PAGE_SIZE = 4;
 

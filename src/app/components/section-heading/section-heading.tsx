@@ -1,3 +1,4 @@
+import "./section-heading.css";
 export default function SectionHeading({
   title,
   id,

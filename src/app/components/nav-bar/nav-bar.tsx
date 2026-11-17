@@ -1,9 +1,11 @@
 "use client";
 
+import "./nav-bar.css";
+
 import { useEffect, useRef, useState } from "react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { FiMenu, FiX } from "react-icons/fi";
-import { profile } from "../data/profile";
+import { profile } from "../../data/profile";
 
 const sections = ["About", "Experience", "Projects", "Education", "Contact"];
 

@@ -1,3 +1,4 @@
+import "./about.css";
 import {
   Aws,
   DjangoIcon,
@@ -19,7 +20,7 @@ import {
   Gitlab,
   AwsCognito,
 } from "@dev.icons/react";
-import SectionHeading from "./section-heading";
+import SectionHeading from "../section-heading/section-heading";
 
 const skillGroups = [
   {

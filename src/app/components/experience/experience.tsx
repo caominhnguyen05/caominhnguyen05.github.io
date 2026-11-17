@@ -1,5 +1,6 @@
-import { experiences } from "../data/experiences";
-import SectionHeading from "./section-heading";
+import "./experience.css";
+import { experiences } from "../../data/experiences";
+import SectionHeading from "../section-heading/section-heading";
 
 export default function Experience() {
   return (

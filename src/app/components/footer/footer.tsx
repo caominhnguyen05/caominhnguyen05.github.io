@@ -1,3 +1,4 @@
+import "./footer.css";
 import { FiArrowUp } from "react-icons/fi";
 
 export default function Footer() {

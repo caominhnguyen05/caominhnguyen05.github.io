@@ -1,0 +1,227 @@
+.projects-heading-anchor {
+  scroll-margin-top: 116px;
+}
+.projects-heading-anchor:focus {
+  outline: none;
+}
+.projects-heading-anchor:focus-visible h2 {
+  outline: 2px solid #687f9f;
+  outline-offset: 5px;
+  border-radius: 3px;
+}
+.projects-bento {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 24px;
+  grid-auto-rows: auto;
+}
+.project-card {
+  grid-column: span 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 2px 5px #0b152603;
+  transition:
+    border-color 220ms,
+    box-shadow 220ms,
+    transform 220ms;
+}
+.project-card:nth-child(4n + 1),
+.project-card:nth-child(4n + 4) {
+  grid-column: span 3;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: #b7c1d0;
+  box-shadow: 0 12px 28px #0b15260a;
+}
+.project-preview {
+  position: relative;
+  height: 250px;
+  margin: 14px 14px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f0f2f5;
+  border: 1px solid #eaecf0;
+}
+.project-preview img {
+  object-fit: cover;
+  object-position: top;
+  transition: transform 650ms;
+}
+.project-card:hover .project-preview img {
+  transform: scale(1.035);
+}
+.project-preview-terminal img {
+  object-fit: contain;
+  background: #0f172a;
+}
+.project-image-fallback {
+  height: 100%;
+  display: grid;
+  place-content: center;
+  gap: 14px;
+  text-align: center;
+  background: var(--navy);
+  color: white;
+}
+.project-image-fallback svg {
+  font-size: 44px;
+  margin-inline: auto;
+  color: #c4cddd;
+}
+.project-image-fallback span {
+  font-size: 13px;
+  letter-spacing: 3px;
+}
+.project-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 26px 28px 28px;
+}
+.project-overline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  letter-spacing: 0.6px;
+}
+.project-overline svg {
+  font-size: 13px;
+  color: #64748b;
+}
+.project-content h3 {
+  margin: 0 0 11px;
+  color: var(--ink);
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing: -0.65px;
+  line-height: 1.35;
+}
+.project-content > p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.85;
+  margin: 0 0 18px;
+}
+.project-content > .tag-list {
+  margin-top: auto;
+}
+.project-content .tag {
+  font-size: 10px;
+  padding: 4px 7px;
+}
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.project-actions .button {
+  min-height: 44px;
+  font-size: 12px;
+  padding: 9px 13px;
+  border-radius: 7px;
+  gap: 8px;
+}
+.project-actions .button svg {
+  font-size: 13px;
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 25px;
+}
+.pagination-status {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.pagination button {
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  height: 44px;
+  background: white;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  font-size: 12px;
+  transition:
+    background 180ms,
+    color 180ms;
+}
+.pagination button[aria-current="page"] {
+  color: white;
+  background: var(--primary);
+  border-color: var(--primary);
+}
+.pagination button:hover:not(:disabled):not([aria-current="page"]) {
+  color: var(--primary);
+  background: var(--soft);
+}
+.pagination button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+@media (max-width: 900px) {
+  .project-preview {
+    height: 200px;
+  }
+  .project-content {
+    padding: 22px;
+  }
+  .project-content h3 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .projects-bento {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .project-card,
+  .project-card:nth-child(n) {
+    grid-column: auto;
+  }
+  .project-preview {
+    height: 210px;
+  }
+  .project-content {
+    padding: 22px 20px;
+  }
+  .project-content h3 {
+    font-size: 20px;
+  }
+  .project-content > p {
+    font-size: 13px;
+  }
+  .pagination {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .pagination-status {
+    font-size: 11px;
+  }
+  .pagination-controls {
+    gap: 4px;
+  }
+}
