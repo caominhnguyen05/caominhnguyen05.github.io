@@ -49,7 +49,7 @@ export default function Intro() {
           <figure className="portrait">
             <div className="portrait-image">
               <Image
-                src="/profile-cutout.webp"
+                src="/profile-photo.jpg"
                 alt="Cao Minh Nguyen"
                 fill
                 priority

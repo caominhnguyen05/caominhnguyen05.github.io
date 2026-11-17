@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   isolation: isolate;
-  padding-block: 128px 72px;
+  padding-block: 70px 72px;
   overflow: clip;
 }
 .hero-inner {
@@ -119,14 +119,15 @@
 }
 .portrait-image {
   position: relative;
-  width: calc(100% + 40px);
-  margin-left: -20px;
-  height: 600px;
+  width: 80%;
+  height: 550px;
+  margin-inline: auto;
   overflow: hidden;
+  border-radius: 10px;
   mask-image: linear-gradient(to bottom, #000 72%, #000b 85%, transparent 100%);
 }
 .portrait-image img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center bottom;
 }
 .portrait figcaption {
