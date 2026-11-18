@@ -10,9 +10,9 @@ const headingFont = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Cao Minh Nguyen | Software Engineer",
+  title: "Cao Minh Nguyen",
   description:
-    "Cao Minh Nguyen — Computer Science at TU Delft. Explore my software engineering experience, backend and full-stack projects, and education.",
+    "Cao Minh Nguyen — CS graduate from TU Delft. Explore my software engineering experience, backend and full-stack projects, and education.",
 };
 
 export default function RootLayout({
