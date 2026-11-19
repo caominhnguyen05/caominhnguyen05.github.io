@@ -14,6 +14,7 @@
 /coverage
 /test-results/
 /playwright-report/
+/.taste-skill/
 
 # next.js
 /.next/
@@ -44,3 +45,5 @@ yarn-error.log*
 next-env.d.ts
 
 /docs
+.agents/
+.specify/
