@@ -5,58 +5,52 @@ import { profile } from "../../data/profile";
 
 export default function Intro() {
   return (
-    <section id="intro" className="hero" aria-labelledby="intro-heading">
-      <div className="hero-inner container">
-        <div className="hero-copy" data-reveal="left">
-          <p className="hero-greeting" data-reveal="top">
-            Hi, I&apos;m
-          </p>
-          <h1 id="intro-heading" data-reveal="top">
-            Cao Minh
-            <span>Nguyen</span>
-          </h1>
-          <p className="hero-role" data-reveal="left">
-            Bachelor&apos;s Computer Science & Engineering Graduate
-          </p>
-          <p className="hero-description" data-reveal="left">
-            Hi, I&apos;m a Computer Science graduate from TU Delft with a focus
-            on backend development and a deep interest in exploring AI agents.
-            Currently learning more about AI engineering and building agents, I
-            aim to grow as a software engineer who effectively utilizes emerging
-            AI technologies to build reliable, scalable software that delivers
-            value to customers.
-          </p>
-          <div className="hero-socials" data-reveal="left">
-            <a
-              className="button button-primary"
-              href="#projects"
-            >
-              View my Work
-              <FiArrowUpRight aria-hidden="true" />
-            </a>
-            <a
-              className="cv-link"
-              href={profile.cv}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View my résumé
-              <FiArrowUpRight aria-hidden="true" />
-            </a>
-          </div>
-        </div>
-        <div className="hero-visual" data-reveal="right">
-          <figure className="portrait">
-            <div className="portrait-image">
-              <Image
-                src="/profile-photo.jpg"
-                alt="Cao Minh Nguyen"
-                fill
-                priority
-                sizes="(max-width: 600px) 100vw, (max-width: 900px) 45vw, 560px"
-              />
+    <section
+      id="intro"
+      className="hero hero--split"
+      data-enter
+      aria-labelledby="intro-heading"
+    >
+      <div className="container wrap">
+        <div className="hero-inner hero-text">
+          <div className="hero-copy">
+            <p className="hero-greeting">
+              Hi, I&apos;m
+            </p>
+            <h1 id="intro-heading" data-enter-whole>
+              Cao Minh{" "}
+              <span>Nguyen</span>
+            </h1>
+            <p className="hero-role">
+              Bachelor&apos;s Computer Science & Engineering Graduate
+            </p>
+            <p className="hero-description hero__lead">
+              Hi, I&apos;m a Computer Science graduate from TU Delft with a focus
+              on backend development and a deep interest in exploring AI agents.
+              Currently learning more about AI engineering and building agents, I
+              aim to grow as a software engineer who effectively utilizes emerging
+              AI technologies to build reliable, scalable software that delivers
+              value to customers.
+            </p>
+            <div className="hero-socials">
+              <a
+                className="button button-primary btn btn--primary"
+                href="#projects"
+              >
+                View my Work
+                <FiArrowUpRight aria-hidden="true" />
+              </a>
+              <a
+                className="button button-outline btn btn--secondary"
+                href={profile.cv}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View my résumé
+                <FiArrowUpRight aria-hidden="true" />
+              </a>
             </div>
-            <figcaption>
+            <div className="hero-facts">
               <span className="portrait-location">
                 <svg
                   className="portrait-flag"
@@ -83,8 +77,19 @@ export default function Intro() {
                 </svg>
                 <span>TU Delft, Netherlands</span>
               </span>
-            </figcaption>
-          </figure>
+            </div>
+          </div>
+          <div className="hero-visual">
+            <div className="portrait-image hero__media" data-enter-media data-visual>
+              <Image
+                src="/profile-photo.jpg"
+                alt="Cao Minh Nguyen"
+                fill
+                priority
+                sizes="(max-width: 900px) 89vw, 540px"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

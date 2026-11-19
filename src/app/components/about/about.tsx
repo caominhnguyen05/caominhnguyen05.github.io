@@ -63,67 +63,69 @@ export default function About() {
   return (
     <section
       id="about"
-      className="section container"
+      className="section"
       aria-labelledby="about-heading"
     >
-      <SectionHeading id="about-heading" title="a little about me." />
-      <div className="about-grid">
-        <div className="about-copy" data-reveal="left">
-          <p data-reveal="top">
-            I&apos;m a{" "}
-            <strong>Computer Science and Engineering graduate</strong> from{" "}
-            <strong>TU Delft</strong>, where I graduated{" "}
-            <strong>cum laude</strong> with a specialization in Data. I&apos;m
-            passionate about building reliable, scalable software that solves
-            real-world problems.
-          </p>
+      <div className="container wrap">
+        <SectionHeading id="about-heading" title="a little about me." />
+        <div className="about-grid">
+          <div className="about-copy">
+            <p>
+              I&apos;m a{" "}
+              <strong>Computer Science and Engineering graduate</strong> from{" "}
+              <strong>TU Delft</strong>, where I graduated{" "}
+              <strong>cum laude</strong> with a specialization in Data. I&apos;m
+              passionate about building reliable, scalable software that solves
+              real-world problems.
+            </p>
 
-          <p data-reveal="top">
-            Through internships at{" "}
-            <strong>FPT Software, RET, and Dizconto</strong>, I&apos;ve gained
-            hands-on experience in <strong>backend development</strong>, REST
-            APIs, and full-stack applications across healthcare, transportation,
-            and event ticketing, using technologies such as Java, Spring Boot,
-            PostgreSQL, and AWS.
-          </p>
+            <p>
+              Through internships at{" "}
+              <strong>FPT Software, RET, and Dizconto</strong>, I&apos;ve gained
+              hands-on experience in <strong>backend development</strong>, REST
+              APIs, and full-stack applications across healthcare, transportation,
+              and event ticketing, using technologies such as Java, Spring Boot,
+              PostgreSQL, and AWS.
+            </p>
 
-          <p data-reveal="top">
-            I&apos;m particularly interested in{" "}
-            <strong>AI-assisted software engineering</strong>. For my
-            bachelor&apos;s thesis, I explored{" "}
-            <strong>LLM-based test generation</strong> for Java libraries,
-            investigating how AI can improve software testing and development
-            workflows.
-          </p>
+            <p>
+              I&apos;m particularly interested in{" "}
+              <strong>AI-assisted software engineering</strong>. For my
+              bachelor&apos;s thesis, I explored{" "}
+              <strong>LLM-based test generation</strong> for Java libraries,
+              investigating how AI can improve software testing and development
+              workflows.
+            </p>
 
-          <p data-reveal="top">
-            In my free time, I enjoy watching football, working out at the gym,
-            and travelling to explore new places and cultures.
-          </p>
-        </div>
-        <div className="skills" data-reveal="right">
-          <h3 className="eyebrow">Technical skills</h3>
-          {skillGroups.map(({ label, skills }) => (
-            <div className="skill-group" key={label} data-reveal="right">
-              <h4>{label}</h4>
-              <div className="tag-list">
-                {skills.map(({ name, Icon }) => (
-                  <span
-                    className="tag skill-tag inline-flex items-center gap-2"
-                    key={name}
-                  >
-                    <Icon
-                      size={16}
-                      className="shrink-0"
-                      aria-hidden="true"
-                      focusable="false"
-                    />
-                    {name}
-                  </span>
-                ))}
+            <p>
+              In my free time, I enjoy watching football, working out at the gym,
+              and travelling to explore new places and cultures.
+            </p>
+          </div>
+          <div className="skills">
+            <h3 className="eyebrow">Technical skills</h3>
+            {skillGroups.map(({ label, skills }) => (
+              <div className="skill-group" key={label}>
+                <h4>{label}</h4>
+                <div className="tag-list">
+                  {skills.map(({ name, Icon }) => (
+                    <span
+                      className="tag skill-tag inline-flex items-center gap-2"
+                      key={name}
+                    >
+                      <Icon
+                        size={16}
+                        className="shrink-0"
+                        aria-hidden="true"
+                        focusable="false"
+                      />
+                      {name}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

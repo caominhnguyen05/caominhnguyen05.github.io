@@ -37,7 +37,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Magic UI", "Vercel"],
     githubUrl: "https://github.com/caominhnguyen05/caominh-portfolio",
     liveUrl: "https://caominhnguyen.vercel.app",
-    imageUrl: "/projects/portfolio.png",
+    imageUrl: "/projects/portfolio.webp",
   },
   {
     title: "Bill-Splitting Application",

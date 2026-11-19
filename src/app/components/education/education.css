@@ -1,79 +1,38 @@
 .education-list {
-  padding-left: 33px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gutter);
 }
 .education-item {
   display: grid;
-  grid-template-columns: 50px 1fr auto;
-  align-items: center;
-  gap: 20px;
-  padding: 27px 0;
-  border-bottom: 1px solid var(--line);
-}
-.education-item:first-child {
-  padding-top: 0;
+  align-content: start;
+  justify-items: start;
+  gap: 16px;
+  padding: clamp(20px, 4.2vw, 56px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: white;
 }
 .education-icon {
   display: grid;
   place-items: center;
-  width: 47px;
-  height: 47px;
+  width: 72px;
+  height: 72px;
   border: 1px solid var(--line);
-  background: #ffffff;
-  color: var(--navy);
-  font-size: 20px;
-  border-radius: 10px;
+  border-radius: var(--radius);
 }
-.education-logo {
-  width: 100%;
-  height: 100%;
-  padding: 4px;
-  object-fit: contain;
-}
-.education-item h3 a:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
+.education-logo { object-fit: contain; }
 .education-item h3 {
-  font-size: 17px;
+  font-size: clamp(1.15rem, 2.25vw, 1.75rem);
   font-weight: 600;
-  margin: 0 0 8px;
-  letter-spacing: -0.4px;
+  letter-spacing: -.04em;
+  line-height: 1.2;
 }
-.education-item p {
-  color: var(--muted);
-  font-size: 13px;
-  margin: 0;
-  line-height: 1.6;
-}
-.education-years {
-  color: var(--muted);
-  font-size: 12px;
-}
+.education-item h3 a { display: inline-flex; align-items: center; min-height: 44px; }
+.education-item h3 a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
+.education-item p { color: var(--muted); line-height: 1.55; }
+.education-item p + p { margin-top: 6px; }
+.education-years { color: var(--accent); font-size: .85rem; font-weight: 600; }
 @media (max-width: 900px) {
-  .education-list {
-    padding-left: 0;
-  }
-}
-@media (max-width: 600px) {
-  .education-item {
-    grid-template-columns: 40px 1fr;
-    gap: 8px 14px;
-    padding-block: 23px;
-  }
-  .education-icon {
-    width: 38px;
-    height: 38px;
-    font-size: 17px;
-    grid-row: span 2;
-  }
-  .education-item h3 {
-    font-size: 16px;
-  }
-  .education-item p {
-    font-size: 13px;
-  }
-  .education-years {
-    grid-column: 2;
-    font-size: 11px;
-  }
+  .education-list { grid-template-columns: minmax(0, 1fr); }
 }

@@ -7,14 +7,13 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { FiMenu, FiX } from "react-icons/fi";
 import { profile } from "../../data/profile";
 
-const sections = ["About", "Experience", "Projects", "Education", "Contact"];
+const sections = ["Projects", "About", "Experience", "Education", "Contact"];
 
 export default function Navbar() {
   const [active, setActive] = useState("");
   const [open, setOpen] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
   const nav = useRef<HTMLElement>(null);
-  const progress = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     let frame = 0;
@@ -28,14 +27,6 @@ export default function Navbar() {
         window.innerHeight + window.scrollY >=
         document.documentElement.scrollHeight - 8;
       setActive(atBottom ? "contact" : (current?.toLowerCase() ?? ""));
-      const scrollableHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const fraction =
-        scrollableHeight > 0
-          ? Math.min(1, Math.max(0, window.scrollY / scrollableHeight))
-          : 0;
-      if (progress.current)
-        progress.current.style.transform = `scaleX(${fraction})`;
     };
     const scheduleUpdate = () => {
       if (!frame) frame = window.requestAnimationFrame(updateNavigation);
@@ -83,17 +74,22 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="site-header">
-      <nav className="navbar" aria-label="Main navigation" ref={nav}>
+    <header className="site-header nav">
+      <a className="skip-link" href="#main-content">Skip to content</a>
+      <nav
+        className="navbar container wrap"
+        aria-label="Main navigation"
+        ref={nav}
+        onBlur={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
+        }}
+      >
         <a
           href="#intro"
-          className="wordmark"
+          className="wordmark nav__logo"
           aria-label="Cao Minh, back to top"
           onClick={() => setOpen(false)}
         >
-          <span className="wordmark-monogram" aria-hidden="true">
-            CM
-          </span>
           <span>Cao Minh Nguyen</span>
         </a>
         <div className="desktop-nav">
@@ -110,7 +106,7 @@ export default function Navbar() {
             </a>
           ))}
         </div>
-        <div className="nav-actions">
+        <div className="nav-actions nav__actions">
           <a
             className="nav-social"
             href={profile.github}
@@ -158,12 +154,6 @@ export default function Navbar() {
             </a>
           ))}
         </div>
-        <span
-          className="nav-progress"
-          ref={progress}
-          aria-hidden="true"
-          style={{ transform: "scaleX(0)" }}
-        />
       </nav>
     </header>
   );

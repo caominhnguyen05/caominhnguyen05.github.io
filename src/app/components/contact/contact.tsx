@@ -28,30 +28,29 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="section container"
+      className="closing__cta close--type"
+      data-moment="word-highlight"
       aria-labelledby="contact-heading"
     >
-      <SectionHeading id="contact-heading" title="let's talk." />
+      <SectionHeading id="contact-heading" title="let's connect." />
       <div className="contact-grid">
-        <div className="contact-copy" data-reveal="left">
-          <p>
+        <div className="contact-copy">
+          <p className="mo-wh__text">
             Interested in working together or have something in mind? I&apos;m
             looking for software engineering opportunities and always happy to
             connect.
           </p>
-          <a className="button button-primary" href={`mailto:${profile.email}`}>
+          <a className="button button-primary btn btn--primary btn--xl" href={`mailto:${profile.email}`}>
             <FiMail aria-hidden="true" />
             Get in touch
             <FiArrowUpRight aria-hidden="true" />
           </a>
         </div>
-        <div className="contact-links" data-reveal="right">
-          {links.map(({ label, detail, href, Icon }, index) => (
+        <div className="contact-links">
+          {links.map(({ label, detail, href, Icon }) => (
             <a
               key={label}
               href={href}
-              data-reveal="right"
-              data-reveal-delay={index}
               target={label === "Email" ? undefined : "_blank"}
               rel={label === "Email" ? undefined : "noopener noreferrer"}
             >

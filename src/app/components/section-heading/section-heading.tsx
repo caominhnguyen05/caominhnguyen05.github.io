@@ -9,7 +9,7 @@ export default function SectionHeading({
   note?: string;
 }) {
   return (
-    <div className="section-heading" data-reveal="top">
+    <div className="section-heading">
       <h2 id={id}>{title}</h2>
       <span className="section-rule" />
       {note && <span className="section-note mono">{note}</span>}
